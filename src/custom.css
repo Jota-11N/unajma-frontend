@@ -1,0 +1,665 @@
+/* 🎨 Paleta de colores deportivos mejorada */
+:root {
+  --primary: #1e3a8a;
+  --primary-light: #3b82f6;
+  --primary-dark: #1e40af;
+  --secondary: #facc15;
+  --secondary-dark: #eab308;
+  --light-bg: #f8fafc;
+  --text-dark: #111827;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🏟 Fondo general con patrón deportivo */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%),
+              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(30,58,138,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+/* Overlay sutil para páginas de auth */
+.container.py-5 {
+  position: relative;
+}
+
+/* 🧭 NAVBAR Mejorado */
+.navbar {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--secondary);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  color: white !important;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  color: var(--secondary) !important;
+}
+
+.navbar-brand img {
+  width: 45px;
+  height: 45px;
+  margin-right: 12px;
+  border-radius: 10px;
+  border: 2px solid var(--secondary);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: rotate(5deg) scale(1.1);
+  border-color: white;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.6rem 1rem !important;
+  border-radius: 8px;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--secondary) !important;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  color: var(--secondary) !important;
+  background: rgba(255, 255, 255, 0.15);
+  font-weight: 600;
+}
+
+/* 🏆 Cards Mejorados */
+.card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  background: #ffffff;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  font-weight: 600;
+  border-bottom: 3px solid var(--secondary);
+  padding: 1.25rem 1.5rem;
+}
+
+.card-body {
+  padding: 2rem;
+  background: #ffffff;
+}
+
+.card-footer {
+  background: var(--light-bg);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Auth Cards - Especial para Login/Register */
+.container.py-5 .card {
+  border: 2px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+}
+
+/* 📊 Tablas Mejoradas */
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 0;
+}
+
+.table thead {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+}
+
+.table thead th {
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 1rem;
+}
+
+.table tbody tr {
+  transition: all 0.2s ease;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table tbody tr:hover {
+  background: rgba(30, 58, 138, 0.05);
+  transform: scale(1.01);
+}
+
+.table tbody td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(248, 250, 252, 0.5);
+}
+
+/* ⚙️ Botones Mejorados */
+.btn {
+  border-radius: 10px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  background: #94a3b8;
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.btn-warning:hover {
+  background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--secondary) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(250, 204, 21, 0.4);
+  color: var(--text-dark);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: white;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* 🧍 Formularios Mejorados */
+.form-control {
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.85rem 1.2rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: var(--light-bg);
+}
+
+.form-control:focus {
+  background-color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.1);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.form-control:disabled {
+  background-color: #f1f5f9;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.form-select {
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.85rem 1.2rem;
+  background-color: var(--light-bg);
+  transition: all 0.3s ease;
+}
+
+.form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.1);
+}
+
+/* 📝 Títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+/* 🎯 Badges Mejorados */
+.badge {
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+}
+
+.badge-warning {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+  color: var(--text-dark);
+}
+
+.badge-success {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: white;
+}
+
+.badge-danger {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+}
+
+/* 🚨 Alerts Mejorados */
+.alert {
+  border-radius: 12px;
+  border: none;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border-left: 5px solid;
+}
+
+.alert-danger {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #991b1b;
+  border-left-color: #dc2626;
+}
+
+.alert-success {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #065f46;
+  border-left-color: #10b981;
+}
+
+.alert-warning {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #78350f;
+  border-left-color: var(--secondary);
+}
+
+.alert-info {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #1e40af;
+  border-left-color: var(--primary-light);
+}
+
+/* 🔄 Spinner */
+.spinner-border {
+  border-width: 3px;
+}
+
+.spinner-border-sm {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-width: 2px;
+}
+
+/* 🔗 Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
+/* 📱 Modal Mejorado */
+.modal-content {
+  border-radius: 16px;
+  border: none;
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+
+.modal-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  border-bottom: 3px solid var(--secondary);
+  padding: 1.5rem;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-footer {
+  background: var(--light-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 1.25rem;
+}
+
+/* 🎨 Utilidades adicionales */
+.shadow-sm {
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.shadow-md {
+  box-shadow: var(--shadow-md) !important;
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.shadow-xl {
+  box-shadow: var(--shadow-xl) !important;
+}
+
+.text-muted {
+  color: #64748b !important;
+}
+
+.fw-bold {
+  font-weight: 700 !important;
+}
+
+.fw-semibold {
+  font-weight: 600 !important;
+}
+
+/* ✨ Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.alert {
+  animation: slideIn 0.3s ease-out;
+}
+
+.btn:active {
+  animation: pulse 0.3s ease;
+}
+
+/* 🏅 Decoraciones deportivas */
+.trophy-icon::before {
+  content: "🏆";
+  margin-right: 8px;
+}
+
+.soccer-icon::before {
+  content: "⚽";
+  margin-right: 8px;
+}
+
+.medal-icon::before {
+  content: "🥇";
+  margin-right: 8px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+  }
+
+  .card-body {
+    padding: 1.5rem !important;
+  }
+
+  .btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-lg {
+    padding: 0.85rem 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .table {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-body {
+    padding: 1.25rem !important;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .table thead {
+    font-size: 0.75rem;
+  }
+
+  .table tbody {
+    font-size: 0.8rem;
+  }
+}
+
+/* 🎯 Estados especiales */
+.card-hover-effect:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(30, 58, 138, 0.2);
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Separador de "o continúa con" */
+.position-relative span {
+  background: white;
+  padding: 0 1.2rem;
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+hr {
+  border-color: var(--border-color);
+  opacity: 0.3;
+}
+
+/* Focus visible para accesibilidad */
+*:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Transiciones suaves globales */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+button, a, input, select, textarea {
+  transition: all 0.3s ease;
+}
+
+/* Iconos bootstrap mejorados */
+.bi {
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .bi {
+  transform: scale(1.2);
+}
